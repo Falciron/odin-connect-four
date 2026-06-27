@@ -1,0 +1,9 @@
+plugins:
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Naming/PredicatePrefix:
+  AllowedMethods: ['has']
+  
