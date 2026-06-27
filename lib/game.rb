@@ -51,10 +51,10 @@ class Game
 
   def game_over?
     if @cage.full?
-      puts('The board is now full, resulting in a tie game.')
+      puts("The board is now full, resulting in a tie game.\n\n")
       true
     elsif @cage.has_four_in_a_line_with_top_of_latest_column?
-      puts("\nWinner! Player #{@current_player.number} [#{@current_player.symbol}] connected four in a row!")
+      puts("Winner! Player #{@current_player.number} [#{@current_player.symbol}] connected four in a row!\n\n")
       true
     else
       false

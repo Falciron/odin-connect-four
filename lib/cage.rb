@@ -45,7 +45,7 @@ class Cage
       cage_string += print_row(NUM_ROWS - 1 - row_index)
     end
 
-    cage_string += "\n-------------\n1 2 3 4 5 6 7"
+    cage_string += "\n-------------\n1 2 3 4 5 6 7\n\n"
   end
 
   def add_piece_to_column(piece_symbol, column_index)
