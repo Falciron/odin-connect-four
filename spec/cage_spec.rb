@@ -188,4 +188,32 @@ describe Cage do
       end
     end
   end
+
+  describe '#add_piece_to_column' do
+    subject(:cage_with_column) { described_class.new }
+
+    it 'populates the columns matrix' do
+      cage_with_column.add_piece_to_column('#', 3)
+      columns_matrix = cage_with_column.instance_variable_get(:@columns)
+      expect(columns_matrix[3]).to eq(['#'])
+    end
+
+    it 'updates the latest column' do
+      cage_with_column.add_piece_to_column('#', 3)
+      latest_column = cage_with_column.instance_variable_get(:@latest_column)
+      expect(latest_column).to be(3)
+    end
+
+    it 'updates the latest row' do
+      cage_with_column.add_piece_to_column('#', 3)
+      latest_row = cage_with_column.instance_variable_get(:@latest_row)
+      expect(latest_row).to be(0)
+    end
+
+    it 'updates the latest symbol' do
+      cage_with_column.add_piece_to_column('#', 3)
+      latest_symbol = cage_with_column.instance_variable_get(:@latest_symbol)
+      expect(latest_symbol).to be('#')
+    end
+  end
 end
